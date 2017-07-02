@@ -1,0 +1,225 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'bower' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'bower', null ]
+6 verbose cache add name=undefined spec="bower" args=["bower",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'bower',
+7 verbose parsed url   path: 'bower',
+7 verbose parsed url   href: 'bower' }
+8 silly lockFile 206e3ce5-bower bower
+9 verbose lock bower /home/kurt/.npm/206e3ce5-bower.lock
+10 silly lockFile 206e3ce5-bower bower
+11 silly lockFile 206e3ce5-bower bower
+12 verbose addNamed [ 'bower', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 1240aab1-bower bower@
+15 verbose lock bower@ /home/kurt/.npm/1240aab1-bower.lock
+16 silly addNameRange { name: 'bower', range: '*', hasData: false }
+17 verbose request where is /bower
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 24bcae84a55d8314
+20 verbose url raw /bower
+21 verbose url resolving [ 'https://registry.npmjs.org/', './bower' ]
+22 verbose url resolved https://registry.npmjs.org/bower
+23 verbose request where is https://registry.npmjs.org/bower
+24 info trying registry request attempt 1 at 09:52:11
+25 verbose etag W/"5953fdb4-31fa9"
+26 http GET https://registry.npmjs.org/bower
+27 http 304 https://registry.npmjs.org/bower
+28 silly registry.get cb [ 304,
+28 silly registry.get   { date: 'Sun, 02 Jul 2017 08:52:12 GMT',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     'cache-control': 'max-age=300',
+28 silly registry.get     etag: 'W/"5953fdb4-31fa9"',
+28 silly registry.get     age: '155',
+28 silly registry.get     connection: 'keep-alive',
+28 silly registry.get     'x-served-by': 'cache-lhr6351-LHR',
+28 silly registry.get     'x-cache': 'HIT',
+28 silly registry.get     'x-cache-hits': '1',
+28 silly registry.get     'x-timer': 'S1498985532.121413,VS0,VE0',
+28 silly registry.get     vary: 'Accept-Encoding' } ]
+29 verbose etag https://registry.npmjs.org/bower from cache
+30 silly addNameRange number 2 { name: 'bower', range: '*', hasData: true }
+31 silly addNameRange versions [ 'bower',
+31 silly addNameRange   [ '0.1.0',
+31 silly addNameRange     '0.1.2',
+31 silly addNameRange     '0.1.3',
+31 silly addNameRange     '0.2.0',
+31 silly addNameRange     '0.3.0',
+31 silly addNameRange     '0.3.1',
+31 silly addNameRange     '0.3.2',
+31 silly addNameRange     '0.4.0',
+31 silly addNameRange     '0.5.0',
+31 silly addNameRange     '0.5.1',
+31 silly addNameRange     '0.6.0',
+31 silly addNameRange     '0.6.1',
+31 silly addNameRange     '0.6.2',
+31 silly addNameRange     '0.6.3',
+31 silly addNameRange     '0.6.4',
+31 silly addNameRange     '0.6.5',
+31 silly addNameRange     '0.6.6',
+31 silly addNameRange     '0.6.7',
+31 silly addNameRange     '0.6.8',
+31 silly addNameRange     '0.7.0',
+31 silly addNameRange     '0.7.1',
+31 silly addNameRange     '0.8.0',
+31 silly addNameRange     '0.8.1',
+31 silly addNameRange     '0.8.2',
+31 silly addNameRange     '0.8.3',
+31 silly addNameRange     '0.8.4',
+31 silly addNameRange     '0.8.5',
+31 silly addNameRange     '0.8.6',
+31 silly addNameRange     '0.9.0',
+31 silly addNameRange     '0.9.1',
+31 silly addNameRange     '0.9.2',
+31 silly addNameRange     '0.10.0',
+31 silly addNameRange     '1.0.0',
+31 silly addNameRange     '1.0.1',
+31 silly addNameRange     '1.0.2',
+31 silly addNameRange     '1.0.3',
+31 silly addNameRange     '1.1.0',
+31 silly addNameRange     '1.1.1',
+31 silly addNameRange     '1.1.2',
+31 silly addNameRange     '1.2.0',
+31 silly addNameRange     '1.2.1',
+31 silly addNameRange     '1.2.2',
+31 silly addNameRange     '1.2.3',
+31 silly addNameRange     '1.2.4',
+31 silly addNameRange     '1.2.5',
+31 silly addNameRange     '1.2.6',
+31 silly addNameRange     '1.2.7',
+31 silly addNameRange     '1.2.8',
+31 silly addNameRange     '1.3.0',
+31 silly addNameRange     '1.3.1',
+31 silly addNameRange     '1.3.2',
+31 silly addNameRange     '1.3.3',
+31 silly addNameRange     '1.3.4',
+31 silly addNameRange     '1.3.5',
+31 silly addNameRange     '1.3.6',
+31 silly addNameRange     '1.3.7',
+31 silly addNameRange     '1.3.8',
+31 silly addNameRange     '1.3.9',
+31 silly addNameRange     '1.3.10',
+31 silly addNameRange     '1.3.11',
+31 silly addNameRange     '1.3.12',
+31 silly addNameRange     '1.4.0',
+31 silly addNameRange     '1.4.1',
+31 silly addNameRange     '1.5.0',
+31 silly addNameRange     '1.5.1',
+31 silly addNameRange     '1.5.2',
+31 silly addNameRange     '1.5.3',
+31 silly addNameRange     '1.6.2',
+31 silly addNameRange     '1.6.3',
+31 silly addNameRange     '1.6.4',
+31 silly addNameRange     '1.6.5',
+31 silly addNameRange     '1.5.4',
+31 silly addNameRange     '1.4.2',
+31 silly addNameRange     '1.6.6',
+31 silly addNameRange     '1.6.7',
+31 silly addNameRange     '1.6.8',
+31 silly addNameRange     '1.6.9',
+31 silly addNameRange     '1.7.0',
+31 silly addNameRange     '1.7.1',
+31 silly addNameRange     '1.7.2',
+31 silly addNameRange     '1.7.5',
+31 silly addNameRange     '1.7.6',
+31 silly addNameRange     '1.7.7',
+31 silly addNameRange     '1.7.8',
+31 silly addNameRange     '1.7.9',
+31 silly addNameRange     '1.8.0' ] ]
+32 verbose addNamed [ 'bower', '1.8.0' ]
+33 verbose addNamed [ '1.8.0', '1.8.0' ]
+34 silly lockFile 8d20daf9-bower-1-8-0 bower@1.8.0
+35 verbose lock bower@1.8.0 /home/kurt/.npm/8d20daf9-bower-1-8-0.lock
+36 warn deprecated bower@1.8.0: ..psst! While Bower is maintained, we recommend Yarn and Webpack for *new* front-end projects! Yarn's advantage is security and reliability, and Webpack's is support for both CommonJS and AMD projects. Currently there's no migration path, but please help to create it: https://github.com/bower/bower/issues/2467
+37 silly lockFile 8d20daf9-bower-1-8-0 bower@1.8.0
+38 silly lockFile 8d20daf9-bower-1-8-0 bower@1.8.0
+39 silly lockFile 1240aab1-bower bower@
+40 silly lockFile 1240aab1-bower bower@
+41 silly resolved [ { name: 'bower',
+41 silly resolved     version: '1.8.0',
+41 silly resolved     description: 'The browser package manager',
+41 silly resolved     author: { name: 'Twitter' },
+41 silly resolved     license: 'MIT',
+41 silly resolved     repository: { type: 'git', url: 'git+https://github.com/bower/bower.git' },
+41 silly resolved     main: 'lib',
+41 silly resolved     bin: { bower: 'bin/bower' },
+41 silly resolved     homepage: 'http://bower.io',
+41 silly resolved     engines: { node: '>=0.10.0' },
+41 silly resolved     keywords: [ 'bower' ],
+41 silly resolved     files: [ 'bin', 'lib' ],
+41 silly resolved     bugs: { url: 'https://github.com/bower/bower/issues' },
+41 silly resolved     _id: 'bower@1.8.0',
+41 silly resolved     scripts: {},
+41 silly resolved     _shasum: '55dbebef0ad9155382d9e9d3e497c1372345b44a',
+41 silly resolved     _from: 'bower@',
+41 silly resolved     _npmVersion: '3.10.9',
+41 silly resolved     _nodeVersion: '4.4.6',
+41 silly resolved     _npmUser: { name: 'sheerun', email: 'sheerun@sher.pl' },
+41 silly resolved     dist:
+41 silly resolved      { shasum: '55dbebef0ad9155382d9e9d3e497c1372345b44a',
+41 silly resolved        tarball: 'https://registry.npmjs.org/bower/-/bower-1.8.0.tgz' },
+41 silly resolved     maintainers:
+41 silly resolved      [ [Object],
+41 silly resolved        [Object],
+41 silly resolved        [Object],
+41 silly resolved        [Object],
+41 silly resolved        [Object],
+41 silly resolved        [Object],
+41 silly resolved        [Object] ],
+41 silly resolved     _npmOperationalInternal:
+41 silly resolved      { host: 'packages-18-east.internal.npmjs.com',
+41 silly resolved        tmp: 'tmp/bower-1.8.0.tgz_1478512918020_0.7136248126626015' },
+41 silly resolved     directories: {},
+41 silly resolved     deprecated: '..psst! While Bower is maintained, we recommend Yarn and Webpack for *new* front-end projects! Yarn\'s advantage is security and reliability, and Webpack\'s is support for both CommonJS and AMD projects. Currently there\'s no migration path, but please help to create it: https://github.com/bower/bower/issues/2467',
+41 silly resolved     _resolved: 'https://registry.npmjs.org/bower/-/bower-1.8.0.tgz',
+41 silly resolved     readme: 'ERROR: No README data found!' } ]
+42 info install bower@1.8.0 into /usr/lib
+43 info installOne bower@1.8.0
+44 verbose lib/node_modules/bower unbuild
+45 verbose tar unpack /home/kurt/.npm/bower/1.8.0/package.tgz
+46 silly lockFile 6f53a3f9-tar-usr-lib-node-modules-bower tar:///usr/lib/node_modules/bower
+47 verbose lock tar:///usr/lib/node_modules/bower /home/kurt/.npm/6f53a3f9-tar-usr-lib-node-modules-bower.lock
+48 silly lockFile c8f78387-kurt-npm-bower-1-8-0-package-tgz tar:///home/kurt/.npm/bower/1.8.0/package.tgz
+49 verbose lock tar:///home/kurt/.npm/bower/1.8.0/package.tgz /home/kurt/.npm/c8f78387-kurt-npm-bower-1-8-0-package-tgz.lock
+50 silly gunzTarPerm modes [ '775', '664' ]
+51 error Error: EACCES, mkdir '/usr/lib/node_modules/bower'
+51 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/bower']
+51 error   errno: 3,
+51 error   code: 'EACCES',
+51 error   path: '/usr/lib/node_modules/bower',
+51 error   fstream_type: 'Directory',
+51 error   fstream_path: '/usr/lib/node_modules/bower',
+51 error   fstream_class: 'DirWriter',
+51 error   fstream_stack:
+51 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+51 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+51 error      'Object.oncomplete (fs.js:108:15)' ] }
+52 error Please try running this command again as root/Administrator.
+53 error System Linux 3.19.0-47-generic
+54 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "bower"
+55 error cwd /home/kurt/shine
+56 error node -v v0.10.37
+57 error npm -v 1.4.28
+58 error path /usr/lib/node_modules/bower
+59 error fstream_path /usr/lib/node_modules/bower
+60 error fstream_type Directory
+61 error fstream_class DirWriter
+62 error code EACCES
+63 error errno 3
+64 error stack Error: EACCES, mkdir '/usr/lib/node_modules/bower'
+65 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+65 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+65 error fstream_stack Object.oncomplete (fs.js:108:15)
+66 verbose exit [ 3, true ]
