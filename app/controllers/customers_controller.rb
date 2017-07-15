@@ -12,5 +12,11 @@ class CustomersController < ApplicationController
   	else
   	  Customer.all.order("last_name asc").offset(PAGE_SIZE * @page).limit(PAGE_SIZE)
   	end
+
+    respond_to do |format|
+      format.html { }
+      format.json { render json: @customers}
+    end
+
   end
 end
