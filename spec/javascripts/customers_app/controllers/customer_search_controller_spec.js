@@ -21,8 +21,8 @@ describe("CustomSearchController", function() {
 	describe("Fetching search results", function() {
 
 	  var scope       = null,
-	      httpBackend = null,
 	      controller  = null,
+	      httpBackend = null,
 	      serverResults = [
 	      		{
 	      			id: 123,
@@ -49,9 +49,16 @@ describe("CustomSearchController", function() {
 	  			  $scope: scope
 	  			});
 	      }));
+
+		beforeEach(function() {
+			httpBackend.when("GET", "/customers.json?keywords=bob&page=0").respond(serverResults);
+		});
+
 	  it("populates the customer list with results", function() {
-	  	debugger;
-	  	expect(scope.customers).toEqualData([]);
+	  	scope.search("bob");
+	  	httpBackend.flush();
+	  	expect(scope.customers).toEqualData(serverResults);
 	  });
 	});
+
 });
