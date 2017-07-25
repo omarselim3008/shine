@@ -32,7 +32,7 @@ app.controller("CustomerSearchController", [
   }
 ]);
 
-app.config(["$routeProvider", fuction($routeProvider) {
+app.config(["$routeProvider", function($routeProvider) {
 	  $routeProvider.when("/", {
 	  	controller: "CustomerSearchController",
 	  	templateUrl: "customer_search.html"
