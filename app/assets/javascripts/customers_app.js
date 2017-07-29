@@ -1,4 +1,4 @@
-var app = angular.module('customers',['ngRoute', 'ngResource', 'templates']);
+var app = angular.module('customers',['ngRoute', 'templates']);
 
 app.controller("CustomerSearchController", [
 	"$scope", "$http", "$location",
@@ -36,11 +36,18 @@ app.controller("CustomerSearchController", [
   }
 ]);
 
-app.controller("CustomerDetailController", ["$scope", "$routeParams", "$resource",
-	function($scope, $routeParams, $resource) {
+app.controller("CustomerDetailController", ["$scope", "$http", "$routeParams",
+	function($scope, $http, $routeParams) {
 		var customerId = $routeParams.id;
-		var Customer = $resource('/customers/:customerId.json');
-    $scope.customer = Customer.get({ "customerId": customerId })
+		$scope.customer = {};
+
+		$http.get(
+			"/customers/" + customerId + ".json").then(function(response) {
+				$scope.customer = response.data;
+			}, function(response) {
+				alert("There was a problem: " + response.status);
+			}
+		);
 	}
 ]);
 
