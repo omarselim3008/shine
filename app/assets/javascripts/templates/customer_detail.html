@@ -73,22 +73,24 @@
 	      <h2 class="h4">Billing Info</h2>
 	    </header>
 	    <section class="panel-body">
-		    <div class="row">
-		      <div class="col-md-7">
-		        <p class="h4">
-		        ****_****_****-1234
-		          <span class="label label-success">VISA</span>
-		        </p>
-		        <p>
-		          <label>Expires:</label> 04/19
-		        </p>
-		      </div>
-				  <div class="col-md-5 text-right">
-				    <button class="btn btn-md btn-default">
-				      View Details
-				    </button>
-				  </div>
-		    </div>
+	    <article ng-controller="CustomerCreditCardController">
+			    <div class="row">
+			      <div class="col-md-7">
+			        <p class="h4">
+			        ****_****_****-{{creditCard.lastFour}}
+			          <span class="label label-success">{{creditCard.cardType}}</span>
+			        </p>
+			        <p>
+			          <label>Expires:</label> {{creditCard.expirationMonth}}/{{creditCard.expirationMonth}}
+			        </p>
+			      </div>
+					  <div class="col-md-5 text-right">
+					    <a href="{{creditCard.detailsLink}}" class="btn btn-md btn-default">
+					      View Details
+					    </a>
+					  </div>
+			    </div>
+		    </article>
 		    <h3>Billing Address <input type="checkbox"> Same as Shipping? </h3>
 		    <div class="form-group">
 		      <label class="sr-only" for="street-address">Street Address</label>
