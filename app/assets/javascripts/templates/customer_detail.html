@@ -1,4 +1,4 @@
-<form><div class="row">
+<form novalidate><div class="row">
   <div class="col-md-6">
     <article class="panel panel-primary">
       <header class="panel-heading">
@@ -8,13 +8,13 @@
 		    <div class="row">
 		      <div class="col-md-4">
 		        <div class="form-group">
-		          <label class="sr-only" for="first-name">First Name</label>
+		          <label class="sr-only" required for="first-name">First Name</label>
 		          <input type="text" class="form-control" name="first-name" ng-model="customer.first_name">
 		        </div>
 		      </div>
 				  <div class="col-md-4">
 				    <div class="form-group">
-				      <label class="sr-only" for="last-name">Last Name</label>
+				      <label class="sr-only" required for="last-name">Last Name</label>
 				      <input type="text" class="form-control" name="last-name" ng-model="customer.last_name">
 				    </div>
 				  </div>
@@ -22,13 +22,13 @@
 				    <div class="input-group">
 				    	<div class="input-group-addon">@</div>
 				      <label class="sr-only" for="username">Username</label>
-				      <input type="text" class="form-control" name="username" ng-model="customer.username">
+				      <input type="text" class="form-control" required name="username" ng-model="customer.username">
 				    </div>
 				  </div>
 		    </div>
 		    <div class="form-group">
 		      <label class="sr-only" for="email">Email</label>
-		      <input type="text" class="form-control" name="email" ng-model="customer.email">
+		      <input type="text" class="form-control" required name="email" ng-model="customer.email">
 		    </div>
 	    </section>
 	    <footer class="panel-footer">
@@ -41,13 +41,13 @@
 	    </header>
 	    <section class="panel-body">
 		    <div class="form-group">
-		      <label class="sr-only" for="street-address">Street Address</label>
+		      <label class="sr-only" required for="street-address">Street Address</label>
 		      <input type="text" class="form-control" name="street-address" ng-model="customer.shipping_street">
 		    </div>
 		    <div class="row">
 		      <div class="col-md-6">
 		        <div class="form-group">
-		          <label class="sr-only" for="city">City</label>
+		          <label class="sr-only" required for="city">City</label>
 		          <input type="text" class="form-control" name="city" value="Washington">
 		        </div>
 		      </div>
@@ -68,71 +68,76 @@
 		</article>
 	  </div>
 	  <div class="col-md-6">
-	  <article class="panel panel-default">
-      <header class="panel-heading">
-	      <h2 class="h4">Billing Info</h2>
-	    </header>
-	    <section class="panel-body">
-	      <article ng-controller="CustomerCreditCardController" ng-init="setCreditholderInfo(customerId)">
-			    <div class="row">
-				    <div ng-if="!creditCard.$resolved">
-				      <div class="col-md-10 col-md-offset-1">
-					      <aside class="progress">
-					        <div class="progress-bar progress-bar-striped active" style="width: 100%">
-					          Loading ...
-					        </div>
-					      </aside>
-				      </div>
+		  <article class="panel panel-default">
+	      <header class="panel-heading">
+		      <h2 class="h4">Billing Info</h2>
+		    </header>
+		    <section class="panel-body">
+		      <article ng-controller="CustomerCreditCardController" ng-init="setCreditholderInfo(customerId)">
+				    <div class="row">
+					    <div ng-if="!creditCard.$resolved">
+					      <div class="col-md-10 col-md-offset-1">
+						      <aside class="progress">
+						        <div class="progress-bar progress-bar-striped active" style="width: 100%">
+						          Loading ...
+						        </div>
+						      </aside>
+					      </div>
+					    </div>
+					    <div ng-if="creditCard.$resolved">
+					      <div class="col-md-7">
+					        <p class="h4">
+					        ****_****_****-{{creditCard.lastFour}}
+					          <span class="label label-success">{{creditCard.cardType}}</span>
+					        </p>
+					        <p>
+					          <label>Expires:</label> {{creditCard.expirationMonth}}/{{creditCard.expirationMonth}}
+					        </p>
+					      </div>
+							  <div class="col-md-5 text-right">
+							    <a href="{{creditCard.detailsLink}}" class="btn btn-md btn-default">
+							      View Details
+							    </a>
+							  </div>
+					    </div>
 				    </div>
-				    <div ng-if="creditCard.$resolved">
-				      <div class="col-md-7">
-				        <p class="h4">
-				        ****_****_****-{{creditCard.lastFour}}
-				          <span class="label label-success">{{creditCard.cardType}}</span>
-				        </p>
-				        <p>
-				          <label>Expires:</label> {{creditCard.expirationMonth}}/{{creditCard.expirationMonth}}
-				        </p>
+			    </article>
+			    <h3>Billing Address <input type="checkbox"> Same as Shipping? </h3>
+				    <div class="form-group">
+				      <label class="sr-only" required for="street-address">Street Address</label>
+				      <input type="text" class="form-control" name="street-address" value="123 any street">
+				    </div>
+				    <div class="form-group">
+				      <label class="sr-only" for="street-address-extra">Street Address Extra</label>
+				      <input type="text" class="form-control" name="street-address-extra" value="Unit 101">
+				    </div>
+				    <div class="row">
+				      <div class="col-md-6">
+				        <div class="form-group">
+				          <label class="sr-only" required for="city">City</label>
+				          <input type="text" class="form-control" name="city" value="Washington">
+				        </div>
 				      </div>
-						  <div class="col-md-5 text-right">
-						    <a href="{{creditCard.detailsLink}}" class="btn btn-md btn-default">
-						      View Details
-						    </a>
+						  <div class="col-md-2">
+						    <div class="form-group">
+						      <label class="sr-only" required pattern="[A-Z][A-Z]" for="state">State</label>
+						      <input type="text" class="form-control" name="state" value="DC">
+						    </div>
+						  </div>
+						  <div class="col-md-4">
+						    <div class="form-group">
+						      <label class="sr-only" required pattern="\d\d\d\d\d" for="zip">Zip</label>
+						      <input type="text" class="form-control" name="zip" value="200001">
+						    </div>
 						  </div>
 				    </div>
-			    </div>
-		    </article>
-		    <h3>Billing Address <input type="checkbox"> Same as Shipping? </h3>
-		    <div class="form-group">
-		      <label class="sr-only" for="street-address">Street Address</label>
-		      <input type="text" class="form-control" name="street-address" value="123 any street">
-		    </div>
-		    <div class="form-group">
-		      <label class="sr-only" for="street-address-extra">Street Address Extra</label>
-		      <input type="text" class="form-control" name="street-address-extra" value="Unit 101">
-		    </div>
-		    <div class="row">
-		      <div class="col-md-6">
-		        <div class="form-group">
-		          <label class="sr-only" for="city">City</label>
-		          <input type="text" class="form-control" name="city" value="Washington">
-		        </div>
-		      </div>
-				  <div class="col-md-2">
-				    <div class="form-group">
-				      <label class="sr-only" for="state">State</label>
-				      <input type="text" class="form-control" name="state" value="DC">
-				    </div>
-				  </div>
-				  <div class="col-md-4">
-				    <div class="form-group">
-				      <label class="sr-only" for="zip">Zip</label>
-				      <input type="text" class="form-control" name="zip" value="200001">
-				    </div>
-				  </div>
-		    </div>
-		  </div>
-	  </section>
-    </article>
+		    </section>
+	    </article>
+	    <div class="text-right">
+	      <button ng-click="save()" class="btn btn-lg btn-primary">
+	        Save changes
+	      </button>
+	    </div>
+    </div>
   </div>
-</div></form>
+</form>
