@@ -1,4 +1,4 @@
-var app = angular.module('customers',['ngRoute', 'ngResource', 'templates']);
+var app = angular.module('customers',['ngRoute', 'ngResource', 'ngMessages', 'templates']);
 
 app.controller("CustomerSearchController", [
 	"$scope", "$http", "$location",
@@ -41,6 +41,12 @@ app.controller("CustomerDetailController", ["$scope", "$resource", "$routeParams
 		$scope.customerId = $routeParams.id;
 		var Customer = $resource('/customers/:customerId.json')
 		$scope.customer = Customer.get({ "customerId": $scope.customerId });
+
+		$scope.save = function() {
+			if ($scope.form.email.$valid) {
+			  alert("Email is VALID");
+			}
+	  };
 	}
 ]);
 
