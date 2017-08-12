@@ -1,6 +1,6 @@
 class FakeBillingController < ApplicationController
   def show
-    sleep 3
+    Resque.enqueue(Sleeper, 15)
     if params[:cardholder_id]
       render json: {
         lastFour: Faker::Business.credit_card_number[-4..-1],

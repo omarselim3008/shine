@@ -1,9 +1,12 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
   devise_for :users
   root 'customers#index'
   resources :customers, only: [:index,:show]
   get "angular_test", to: "angular_test#index"
   get "fake_billing", to: "fake_billing#show"
+  mount Resque::Server.new, at: "/resque"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
